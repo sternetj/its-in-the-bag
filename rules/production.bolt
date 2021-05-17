@@ -1,0 +1,61 @@
+path /{gameId} {
+  read() { true }
+}
+
+path /{gameId} is Game {
+  validate() { gameId.length <= 31 }
+  write() { true }
+}
+
+type Game {
+  timerTimeout: String | Null,
+  cards: Card[] | Null,
+  gameCards: Card[] | Null,
+  activePlayer: String | Null,
+  round: Round,
+  players: Map<String, Player>,
+  answered: Map<Team, Card[] | Null> | Null,
+  scores: Map<Team, Map<RoundStr, Number>> | Null,
+  winner: Team | Tie | Null,
+}
+
+type Card {
+  text: String,
+  type: CardType,
+}
+
+type Player {
+  validate() { 
+    this.playerName.length <= 25
+  }
+
+  id: String,
+  playerName: String,
+  team: Team | Null,
+}
+
+type Round extends Number {
+  validate() { this >= 1 && this <= 3 }
+}
+
+type RoundStr extends String {
+  validate() { this == "1" || this == "2" || this == "3" }
+}
+
+type Team extends String {
+  validate() { this == "A" || this == "B" }
+}
+
+type Tie extends String {
+  validate() { this == "Tie" }
+}
+
+type CardType extends String {
+  validate() { 
+    this == "entertainment"  ||
+    this == "locations"  ||
+    this == "sports"  ||
+    this == "outdoors"  ||
+    this == "people"
+   }
+}

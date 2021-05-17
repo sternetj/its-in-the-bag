@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: #020e19;
+  color: #ddd;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+#root {
+  position: relative;
+  min-height: 100vh;
+}
+
+@font-face {
+  font-family: "IITB";
+  src: url("./fonts/OPTIRipple-Bold/OPTIRipple-Bold.ttf.woff") format("woff"),
+    url("./fonts/OPTIRipple-Bold/OPTIRipple-Bold.ttf.svg#OPTIRipple-Bold")
+      format("svg"),
+    url("./fonts/OPTIRipple-Bold/OPTIRipple-Bold.ttf.eot"),
+    url("./fonts/OPTIRipple-Bold/OPTIRipple-Bold.ttf.eot?#iefix")
+      format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+}
