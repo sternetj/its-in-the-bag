@@ -20,7 +20,9 @@ const CreateGame: FC<WelcomeProps> = (props) => {
 
   return (
     <Container container direction="column" alignItems="center">
-      <Typography variant="h4">{title}</Typography>
+      <Typography variant="h4" color="secondary">
+        {title}
+      </Typography>
       <StyledTextField
         autoFocus
         variant="outlined"
@@ -38,7 +40,7 @@ const CreateGame: FC<WelcomeProps> = (props) => {
       <Grid container direction="row" justify="space-evenly">
         <ActionButton onClick={() => onBack()}>Back</ActionButton>
         <ActionButton
-          color="primary"
+          color="secondary"
           variant="contained"
           onClick={() => {
             if (!name) {

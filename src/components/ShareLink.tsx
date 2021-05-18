@@ -53,11 +53,11 @@ export const ShareLink: FC<Props> = (props) => {
         open={open}
         anchorEl={copyInput.current?.parentElement}
         style={{ zIndex: zIndex.modal }}
-        placement="right"
+        placement="top"
         transition>
         {({ TransitionProps }) => (
           <Fade {...TransitionProps} timeout={350}>
-            <Notification>You copied the link!</Notification>
+            <Notification color="secondary">You copied the link!</Notification>
           </Fade>
         )}
       </Popper>
@@ -71,7 +71,7 @@ const Input = styled(FilledInput)({
   },
 });
 
-const Notification = styled("div")({
+const Notification = styled(Typography)({
   marginLeft: 8,
   padding: "1rem",
   backgroundColor: "rgba(0,0,0,0.85)",

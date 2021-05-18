@@ -155,4 +155,8 @@ const Container = styled(Grid)({
   height: "100vh",
 });
 
+if (Container.defaultProps) {
+  Container.defaultProps.className = "fullHeight";
+}
+
 export default JoinGame;

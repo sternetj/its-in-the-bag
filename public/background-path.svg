@@ -7,7 +7,7 @@
     <defs>
      <pattern id="iitb-pattern" x="0" y="0" width="267" height="260" patternUnits="userSpaceOnUse">
   <path id="Selection"
-        fill="#20b3e7" stroke="#20b3e7" stroke-width="1"
+        fill="#46D9FF" stroke="#46D9FF" stroke-width="1"
         d="M 71.00,5.00
            C 71.00,5.00 68.00,3.00 68.00,3.00
              68.00,3.00 69.00,2.00 69.00,2.00
@@ -233,5 +233,5 @@
              </pattern>
              </defs>
 
-             <rect x="0" y="0" width="100%" height="100%" fill="url(#iitb-pattern)" fill-opacity="2.8%" />
+             <rect x="0" y="0" width="100%" height="100%" fill="url(#iitb-pattern)" fill-opacity="4%" />
 </svg>

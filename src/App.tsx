@@ -15,7 +15,7 @@ const theme = createMuiTheme({
       paper: "#062f4a",
     },
     primary: {
-      main: "#20b3e7",
+      main: "#46D9FF",
     },
     secondary: {
       main: amber[300],
@@ -24,12 +24,12 @@ const theme = createMuiTheme({
       // #fee937 - maybe a good yellow
       // #f9ed37 - actual iitb yellow
       secondary: amber[300],
-      primary: "#20b3e7", // actual iitb blue
+      primary: "#46D9FF", // actual iitb blue
     },
   },
 });
 
-ReactGA.initialize("UA-44282114-3");
+ReactGA.initialize("UA-44282114-4");
 
 const App = () => {
   return (

@@ -155,6 +155,7 @@ const Game = () => {
           direction="column"
           alignItems="center"
           justify="center"
+          className="fullHeight"
           style={{ paddingBottom: 24, minHeight: "100vh" }}>
           <Typography
             variant="h6"
@@ -238,6 +239,7 @@ const Game = () => {
           direction="column"
           alignItems="center"
           justify="center"
+          className="fullHeight"
           style={{ paddingBottom: 24, minHeight: "100vh" }}>
           {winner && (
             <Typography
