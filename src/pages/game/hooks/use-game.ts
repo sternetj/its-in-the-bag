@@ -3,7 +3,7 @@ import { getGame } from "../../../services/firebase";
 import { cards, CardType } from "../../../services/game/cards";
 import { shuffle } from "../../../services/shuffle";
 
-export const ROUND_TIME = 15;
+export const ROUND_TIME = process.env.NODE_ENV === "production" ? 30 : 15;
 
 export function useGame(id: string) {
   const ref = getGame(id);

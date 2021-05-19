@@ -72,6 +72,7 @@ export const Card: FC<Props> = (props) => {
                     fontSize: 25,
                     lineHeight: "1.5rem",
                     textTransform: "uppercase",
+                    hyphens: "auto",
                   }}>
                   {card?.text}
                 </Typography>

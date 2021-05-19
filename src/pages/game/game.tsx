@@ -42,6 +42,9 @@ const Game = () => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [turnStarted, setTurnStarted] = useState(false);
   const confirmNextRound = useConfirm(startNextRound);
+  const yourTeam = value?.players[playerId]?.team;
+  const isSameTeam =
+    value && (value.players[value.activePlayer]?.team ?? "nope") === yourTeam;
 
   useEffect(() => {
     if (process.env.NODE_ENV === "production") {
@@ -157,6 +160,11 @@ const Game = () => {
           justify="center"
           className="fullHeight"
           style={{ paddingBottom: 24, minHeight: "100vh" }}>
+          {isSameTeam && !isActivePlayer && (
+            <Typography variant="subtitle2" color="secondary">
+              You are guessing!
+            </Typography>
+          )}
           <Typography
             variant="h6"
             color="secondary"
@@ -214,9 +222,20 @@ const Game = () => {
             />
           )}
           {!isActivePlayer && (
-            <Typography align="center">
-              {`It's ${players[activePlayer].playerName + `'s`} turn`}
-            </Typography>
+            <>
+              <Typography align="center">
+                {`It's ${
+                  players[activePlayer].playerName + `'s`
+                } turn to give clues`}
+              </Typography>
+              <Typography align="center">
+                {isSameTeam
+                  ? "You are on their team so get ready to guess!"
+                  : round < 3
+                  ? "You are not on their team so pay attention for the next round"
+                  : "You are not on their team so take a break"}
+              </Typography>
+            </>
           )}
           <Grid item container justify="center" direction="row">
             {isCurrentTurn && isPlaying && (
@@ -248,7 +267,11 @@ const Game = () => {
               align="center"
               style={{ marginBottom: "1rem" }}>
               {winner !== "Tie" ? (
-                `Team ${winner} Wins!`
+                winner === yourTeam ? (
+                  `Your Team Won!`
+                ) : (
+                  `Team ${winner} Wins!`
+                )
               ) : (
                 <>
                   It's a Tie!
@@ -258,9 +281,9 @@ const Game = () => {
               )}
             </Typography>
           )}
-          <ScoreCard team="A" scores={scores} />
+          <ScoreCard team="A" scores={scores} isYourTeam={yourTeam === "A"} />
           <br />
-          <ScoreCard team="B" scores={scores} />
+          <ScoreCard team="B" scores={scores} isYourTeam={yourTeam === "B"} />
           <br />
           {round < 3 && (
             <Button

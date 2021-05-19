@@ -5,8 +5,9 @@ import { GameState, Team } from "../hooks/use-game";
 interface Props {
   scores: GameState["scores"];
   team: Team;
+  isYourTeam: boolean;
 }
-export const ScoreCard: FC<Props> = ({ team, scores }) => {
+export const ScoreCard: FC<Props> = ({ team, scores, isYourTeam }) => {
   const moreThanOneRound = Object.keys(scores[team]).length > 1;
   const total = Object.values(scores[team] || {}).reduce(
     (t, roundScore) => t + roundScore,
@@ -23,6 +24,11 @@ export const ScoreCard: FC<Props> = ({ team, scores }) => {
         style={{ marginLeft: 16 }}>
         {total}
       </Typography>
+      {isYourTeam && (
+        <Typography variant="caption" color="secondary" component="div">
+          (Your Team)
+        </Typography>
+      )}
       {moreThanOneRound &&
         Object.entries(scores[team] || {}).map(([round, score]) => (
           <Fragment key={round}>
