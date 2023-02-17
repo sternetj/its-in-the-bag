@@ -1,12 +1,7 @@
-import firebase from "firebase";
+import * as firebase from "firebase/app";
+import * as firebaseDb from "firebase/database";
 import { v4 as uuid } from "uuid";
-import {
-  uniqueNamesGenerator,
-  adjectives,
-  animals,
-  colors,
-} from "unique-names-generator";
-import { countBy } from "lodash";
+import { countBy, sample } from "lodash";
 
 const playerId = window.localStorage.getItem("playerId") || uuid();
 window.localStorage.setItem("playerId", playerId);
@@ -22,27 +17,26 @@ const config = {
   databaseURL: "https://its-in-the-bag-451ff-default-rtdb.firebaseio.com/",
 };
 
-firebase.initializeApp(config);
-const db = firebase.database();
-const databaseRef = db.ref();
+const app = firebase.initializeApp(config);
+const db = firebaseDb.getDatabase(app);
+const databaseRef = firebaseDb.ref(db);
 
-export const generateGameName = () =>
-  uniqueNamesGenerator({
-    dictionaries: [[...adjectives, ...colors], animals],
-    separator: "-",
-    style: "lowerCase",
-    length: 2,
-  });
+export const generateGameName = () => {
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  const s = sample;
+
+  return `${s(chars)}${s(chars)}${s(chars)}${s(chars)}`;
+};
 
 export const createGame = async (
   gameId: string,
   playerName: string,
   player?: string,
 ) => {
-  const ref = databaseRef.child(gameId);
+  const ref = firebaseDb.child(databaseRef, gameId);
   const pId = player || playerId;
 
-  await ref.set({
+  await firebaseDb.set(ref, {
     players: {
       [pId]: {
         id: pId,
@@ -68,8 +62,8 @@ export const createGame = async (
 };
 
 export const gameExists = async (gameId: string) => {
-  const ref = db.ref(gameId);
-  const snapshot = await ref.once("value");
+  const ref = firebaseDb.child(databaseRef, gameId);
+  const snapshot = await firebaseDb.get(ref);
   return snapshot.val();
 };
 
@@ -78,11 +72,11 @@ export const joinGame = async (
   playerName: string,
   player?: string,
 ) => {
-  const ref = db.ref(`${gameId}/players`);
-  const snapshot = await ref.once("value");
+  const ref = firebaseDb.child(databaseRef, `${gameId}/players`);
+  const snapshot = await firebaseDb.get(ref);
   const { A = 0, B = 0 } = countBy(Object.values(snapshot.val()), "team");
 
-  await ref.update({
+  await firebaseDb.update(ref, {
     [player || playerId]: {
       id: player || playerId,
       playerName,
@@ -97,5 +91,5 @@ export const joinGame = async (
 };
 
 export const getGame = (gameId: string) => {
-  return db.ref(gameId);
+  return firebaseDb.ref(db, gameId);
 };

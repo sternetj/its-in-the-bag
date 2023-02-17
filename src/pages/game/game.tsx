@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import qs from "qs";
-import { useLocation, useHistory } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   Grid,
   CircularProgress,
@@ -23,7 +23,7 @@ import { useConfirm } from "./hooks/useConfirm";
 const isMobile = checkIsMobile();
 
 const Game = () => {
-  const router = useHistory();
+  const navigateTo = useNavigate();
   const { search } = useLocation();
   const { name, player } = qs.parse(search, {
     ignoreQueryPrefix: true,
@@ -85,7 +85,7 @@ const Game = () => {
       <NoGame
         gameId={name}
         onContinue={() => {
-          router.push("/");
+          navigateTo("/");
         }}
       />
     );
@@ -108,6 +108,11 @@ const Game = () => {
 
   if (process.env.NODE_ENV !== "production") {
     console.log(JSON.stringify(value, null, 2));
+  }
+
+  if (spectator) {
+    navigateTo(`/join${search}`);
+    return null;
   }
 
   if (!activePlayer) {
@@ -149,7 +154,7 @@ const Game = () => {
         onNewGame={() => !spectator && newGame()}
         onExitGame={() => {
           leaveGame(playerId);
-          router.push("/");
+          navigateTo("/");
         }}
       />
       {!!cards.length && (

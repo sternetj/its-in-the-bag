@@ -1,5 +1,10 @@
 import React, { useEffect } from "react";
-import { BrowserRouter, Route, Switch, useLocation } from "react-router-dom";
+import {
+  RouterProvider,
+  Route,
+  useLocation,
+  createBrowserRouter,
+} from "react-router-dom";
 import "./App.css";
 import JoinGame from "./pages/join-game";
 import Game from "./pages/game";
@@ -31,30 +36,37 @@ const theme = createMuiTheme({
 
 ReactGA.initialize("UA-44282114-4");
 
-const App = () => {
-  return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <BrowserRouter>
-        <Routes />
-      </BrowserRouter>
-    </ThemeProvider>
-  );
-};
-
-const Routes = () => {
+const PageView = ({ Component }: { Component: React.ReactNode }) => {
   const l = useLocation();
 
   useEffect(() => {
     ReactGA.pageview(window.location.pathname);
   }, [l.pathname]);
 
+  return <>{Component}</>;
+};
+
+const router = createBrowserRouter([
+  {
+    path: "/join",
+    element: <PageView Component={<JoinGame />} />,
+  },
+  {
+    path: "/game",
+    element: <PageView Component={<Game />} />,
+  },
+  {
+    path: "/",
+    element: <PageView Component={<JoinGame />} />,
+  },
+]);
+
+const App = () => {
   return (
-    <Switch>
-      <Route path="/join" exact children={<JoinGame />} />
-      <Route path="/" exact children={<JoinGame />} />
-      <Route path="/game" children={<Game />} />
-    </Switch>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <RouterProvider router={router} />;
+    </ThemeProvider>
   );
 };
 

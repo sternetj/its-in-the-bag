@@ -2,6 +2,7 @@ import { useObjectVal } from "react-firebase-hooks/database";
 import { getGame } from "../../../services/firebase";
 import { cards, CardType } from "../../../services/game/cards";
 import { shuffle } from "../../../services/shuffle";
+import * as firebase from "firebase/database";
 
 export const ROUND_TIME = process.env.NODE_ENV === "production" ? 30 : 15;
 
@@ -22,19 +23,19 @@ export function useGame(id: string) {
               getNextPlayer(value.players, playerId),
             )!
           : value.activePlayer;
-      ref.update({
+      firebase.update(ref, {
         players: remainingPlayers,
         activePlayer,
       });
     } else {
-      ref.remove();
+      firebase.remove(ref);
     }
   };
 
   const newGame = () => {
     if (!value) return;
 
-    ref.update({
+    firebase.update(ref, {
       answered: {
         A: [],
         B: [],
@@ -49,6 +50,7 @@ export function useGame(id: string) {
       },
       winner: null,
       snapshot: null,
+      timerTimeout: null as any,
     });
   };
 
@@ -90,7 +92,7 @@ export function useGame(id: string) {
       }
     }
 
-    ref.update({
+    firebase.update(ref, {
       answered: {
         ...value.answered,
         [team]: (value.answered?.[team] ?? []).concat(answeredCard),
@@ -103,11 +105,20 @@ export function useGame(id: string) {
   const endTurn = (didCompleteCard: boolean) => {
     if (!value) return;
 
-    if (didCompleteCard) cardAnsweredCorrectly();
+    let additionalStateValues: Partial<GameState> = {};
 
-    ref.update({
+    if (didCompleteCard) {
+      cardAnsweredCorrectly();
+    } else {
+      additionalStateValues = {
+        cards: shuffle(value.cards),
+      };
+    }
+
+    firebase.update(ref, {
       activePlayer: getNextPlayer(value.players, value.activePlayer),
       timerTimeout: null,
+      ...additionalStateValues,
     });
   };
 
@@ -115,7 +126,7 @@ export function useGame(id: string) {
     if (!value || !playerId) return;
     const current = value.players[playerId];
 
-    ref.update({
+    firebase.update(ref, {
       players: {
         ...value.players,
         [playerId]: {
@@ -132,7 +143,7 @@ export function useGame(id: string) {
     const numPlayers = Object.keys(value.players).length;
     const gameCards = shuffle(cards).slice(0, 4 * numPlayers);
 
-    ref.update({
+    firebase.update(ref, {
       activePlayer: getNextPlayer(value.players, value.activePlayer),
       gameCards,
       cards: gameCards,
@@ -142,7 +153,7 @@ export function useGame(id: string) {
   const startTurn = () => {
     if (!value) return;
 
-    ref.update({
+    firebase.update(ref, {
       timerTimeout: new Date(Date.now() + ROUND_TIME * 1000),
     });
   };
@@ -150,7 +161,7 @@ export function useGame(id: string) {
   const startNextRound = () => {
     if (!value) return;
 
-    ref.update({
+    firebase.update(ref, {
       activePlayer: getNextPlayer(value.players, value.activePlayer),
       round: value.round + 1,
       answered: {

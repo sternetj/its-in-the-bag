@@ -1,7 +1,7 @@
 import React, { useState, FC, useEffect } from "react";
 import { Grid, styled, Card, Typography } from "@material-ui/core";
 import Welcome from "./welcome";
-import SwipeableViews from "react-swipeable-views";
+// import SwipeableViews from "react-swipeable-views";
 import {
   createGame,
   joinGame,
@@ -10,7 +10,7 @@ import {
 } from "../../services/firebase";
 import EnterName from "./enter-name";
 import EnterGameId from "./enter-name";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import qs from "qs";
 import { useLocation } from "react-router-dom";
 import { ShareLink } from "../../components/ShareLink";
@@ -27,7 +27,7 @@ const JoinGame: FC = () => {
     player: string;
     name: string;
   };
-  const router = useHistory();
+  const navigateTo = useNavigate();
   const [slide, setSlide] = useState(0);
   const [type, setType] = useState<ConnectType>();
   const [directLink, setDirectLink] = useState<boolean>();
@@ -60,11 +60,12 @@ const JoinGame: FC = () => {
   };
 
   const onSetGameId = async (id: string) => {
+    const upperId = id?.toUpperCase();
     setErrorText(undefined);
-    const exists = await gameExists(id);
+    const exists = await gameExists(upperId);
     if (exists) {
       setSlide(Steps.PlayerName);
-      setGameId(id);
+      setGameId(upperId);
     } else {
       setErrorText("Game does not exist");
     }
@@ -78,7 +79,7 @@ const JoinGame: FC = () => {
         ? createGame(gameId, name, player)
         : joinGame(gameId, name, player));
 
-      router.push(
+      navigateTo(
         `/game?${qs.stringify({
           player,
           name: game.name,
@@ -106,23 +107,24 @@ const JoinGame: FC = () => {
           </Typography>
         )}
         <StyledCard>
-          <SwipeableViews index={slide}>
+          {/* <SwipeableViews index={slide}> */}
+          {slide === 0 && (
             <Welcome
               onJoin={() => onConnect("join")}
               onCreate={() => onConnect("create")}
             />
-            {slide === 1 ? (
-              <EnterGameId
-                title="Enter Game Id"
-                placeholder="trusty-iguana"
-                label="Continue"
-                error={errorText}
-                onBack={() => setSlide(0)}
-                onSubmit={onSetGameId}
-              />
-            ) : (
-              <></>
-            )}
+          )}
+          {slide === Steps.GameName && (
+            <EnterGameId
+              title="Enter Game Id"
+              placeholder="AAAA"
+              label="Continue"
+              error={errorText}
+              onBack={() => setSlide(0)}
+              onSubmit={onSetGameId}
+            />
+          )}
+          {slide === Steps.PlayerName && (
             <EnterName
               dataKey="playerName"
               title="Enter Your Name"
@@ -133,7 +135,8 @@ const JoinGame: FC = () => {
                 <ShareLink gameId={gameId} style={{ padding: "1rem 0" }} />
               )}
             </EnterName>
-          </SwipeableViews>
+          )}
+          {/* </SwipeableViews> */}
         </StyledCard>
       </Container>
     </Background>
