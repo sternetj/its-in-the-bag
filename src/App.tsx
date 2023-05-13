@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 import {
   RouterProvider,
-  Route,
   useLocation,
   createBrowserRouter,
 } from "react-router-dom";
 import "./App.css";
-import JoinGame from "./pages/join-game";
+import JoinGame from "./pages/join-game/join-game";
 import Game from "./pages/game";
 import { ThemeProvider, createMuiTheme, CssBaseline } from "@material-ui/core";
 import ReactGA from "react-ga";

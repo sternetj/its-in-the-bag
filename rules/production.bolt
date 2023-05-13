@@ -17,6 +17,7 @@ type Game {
   answered: Map<Team, Card[] | Null> | Null,
   scores: Map<Team, Map<RoundStr, Number>> | Null,
   winner: Team | Tie | Null,
+  isPassAndPlay: Boolean | Null,
 }
 
 type Card {

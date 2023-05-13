@@ -1,7 +1,8 @@
 import * as firebase from "firebase/app";
 import * as firebaseDb from "firebase/database";
 import { v4 as uuid } from "uuid";
-import { countBy, sample } from "lodash";
+import { countBy, sample, shuffle } from "lodash";
+import { cards } from "./game";
 
 const playerId = window.localStorage.getItem("playerId") || uuid();
 window.localStorage.setItem("playerId", playerId);
@@ -32,9 +33,13 @@ export const createGame = async (
   gameId: string,
   playerName: string,
   player?: string,
+  isPassAndPlay = false,
+  numPlayers = 1,
 ) => {
   const ref = firebaseDb.child(databaseRef, gameId);
   const pId = player || playerId;
+
+  const gameCards = shuffle(cards).slice(0, 4 * numPlayers);
 
   await firebaseDb.set(ref, {
     players: {
@@ -53,6 +58,26 @@ export const createGame = async (
       A: [],
       B: [],
     },
+    ...(isPassAndPlay
+      ? {
+          isPassAndPlay,
+          activePlayer: "A",
+          gameCards,
+          cards: gameCards,
+          players: {
+            A: {
+              id: pId,
+              playerName,
+              team: "A",
+            },
+            B: {
+              id: pId,
+              playerName,
+              team: "B",
+            },
+          },
+        }
+      : {}),
   });
 
   return {
@@ -64,7 +89,7 @@ export const createGame = async (
 export const gameExists = async (gameId: string) => {
   const ref = firebaseDb.child(databaseRef, gameId);
   const snapshot = await firebaseDb.get(ref);
-  return snapshot.val();
+  return snapshot.val() as { isPassAndPlay: boolean };
 };
 
 export const joinGame = async (

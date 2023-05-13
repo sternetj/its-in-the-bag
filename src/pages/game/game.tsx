@@ -36,7 +36,6 @@ const Game = () => {
   const { value, loading, setPlayersTeam, leaveGame, startGame } = game;
   const { newGame, endTurn, startTurn } = game;
   const { cardAnsweredCorrectly, startNextRound } = game;
-  const isCurrentTurn = value?.activePlayer && playerId === value?.activePlayer;
   const numberOfPlayers = Object.keys(value?.players || {}).length;
   const [secondsRemaining, setSecondsRemaining] = useState(ROUND_TIME);
   const [isFlipped, setIsFlipped] = useState(false);
@@ -98,13 +97,15 @@ const Game = () => {
       </Grid>
     );
 
-  const { players, timerTimeout, scores } = value;
+  const { players, timerTimeout, scores, isPassAndPlay } = value;
   const { cards, activePlayer, round, winner } = value;
   const currentPlayer = players[playerId];
-  const spectator = !currentPlayer;
-  const isActivePlayer = activePlayer === playerId;
+  const spectator = isPassAndPlay ? false : !currentPlayer;
+  const isActivePlayer = activePlayer === playerId || isPassAndPlay;
   const timesUp = isActivePlayer && secondsRemaining === 0 && turnStarted;
   const isPlaying = timerTimeout > new Date() || secondsRemaining === 0;
+  const isCurrentTurn =
+    (value?.activePlayer && playerId === value?.activePlayer) || isPassAndPlay;
 
   if (process.env.NODE_ENV !== "production") {
     console.log(JSON.stringify(value, null, 2));
@@ -116,6 +117,11 @@ const Game = () => {
   }
 
   if (!activePlayer) {
+    if (value?.isPassAndPlay) {
+      startGame();
+      return null;
+    }
+
     return (
       <Setup
         playerId={playerId}
@@ -208,7 +214,7 @@ const Game = () => {
               </Box>
             </Box>
           )}
-          {activePlayer === playerId && (
+          {isActivePlayer && (
             <Card
               card={cards[0]}
               isFlipped={isFlipped}
@@ -218,7 +224,8 @@ const Game = () => {
                   `${isMobile ? "Tap" : "Click"} to Flip`
                 ) : (
                   <>
-                    It's Your Turn!
+                    {isPassAndPlay ? `Team ${activePlayer}'s` : "It's Your"}{" "}
+                    Turn!
                     <br />
                     {isMobile ? "Tap" : "Click"} to Start
                   </>

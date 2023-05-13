@@ -3,6 +3,7 @@ import { getGame } from "../../../services/firebase";
 import { cards, CardType } from "../../../services/game/cards";
 import { shuffle } from "../../../services/shuffle";
 import * as firebase from "firebase/database";
+import { useEffect, useRef, useState } from "react";
 
 export const ROUND_TIME = process.env.NODE_ENV === "production" ? 30 : 15;
 
@@ -10,6 +11,13 @@ export function useGame(id: string) {
   const ref = getGame(id);
   const [raw, loading] = useObjectVal<GameState>(ref);
   const value = deserializeGame(raw);
+  const [lastGameActivePlayer, setLastGameActivePlayer] = useState<string>();
+  const [lastGameNumberOfCards, setLastGameNumberOfCards] = useState<number>();
+  const seenCards = useRef(new Set());
+
+  useEffect(() => {
+    value?.gameCards?.forEach((card) => seenCards.current.add(card.text));
+  }, [value?.gameCards]);
 
   const leaveGame = (playerId: string) => {
     if (!value) return;
@@ -34,6 +42,9 @@ export function useGame(id: string) {
 
   const newGame = () => {
     if (!value) return;
+
+    setLastGameActivePlayer(value.activePlayer);
+    setLastGameNumberOfCards(value.gameCards.length);
 
     firebase.update(ref, {
       answered: {
@@ -140,11 +151,27 @@ export function useGame(id: string) {
   const startGame = () => {
     if (!value) return;
 
-    const numPlayers = Object.keys(value.players).length;
-    const gameCards = shuffle(cards).slice(0, 4 * numPlayers);
+    let unusedCards = cards.filter((card) => !seenCards.current.has(card.text));
+
+    let numPlayers: number;
+
+    if (value.isPassAndPlay) {
+      numPlayers = lastGameNumberOfCards ?? 8;
+    } else {
+      numPlayers = 4 * Object.keys(value.players).length;
+    }
+
+    if (unusedCards.length < numPlayers) {
+      unusedCards = cards;
+    }
+
+    const gameCards = shuffle(unusedCards).slice(0, numPlayers);
 
     firebase.update(ref, {
-      activePlayer: getNextPlayer(value.players, value.activePlayer),
+      activePlayer: getNextPlayer(
+        value.players,
+        value.activePlayer || lastGameActivePlayer,
+      ),
       gameCards,
       cards: gameCards,
     });
@@ -207,11 +234,11 @@ const getNextPlayer = (players: GameState["players"], currentPlayer = "") => {
   const activePlayer = currentPlayer || sorted[0];
   const currentIndex = sorted.indexOf(activePlayer);
   const currentTeam = players[activePlayer].team!;
+  const playerList = sorted
+    .slice(currentIndex)
+    .concat(sorted.slice(0, currentIndex));
 
-  return sorted
-    .concat(sorted)
-    .slice(currentIndex + 1)
-    .find((pId) => players[pId].team !== currentTeam);
+  return playerList.find((pId) => players[pId].team !== currentTeam);
 };
 
 export interface GameState {
@@ -232,6 +259,7 @@ export interface GameState {
     };
   };
   winner: Team | "Tie";
+  isPassAndPlay: boolean;
 }
 
 export type Team = "A" | "B";

@@ -1,7 +1,7 @@
 import React, { useState, FC, useEffect } from "react";
 import { Grid, styled, Card, Typography } from "@material-ui/core";
 import Welcome from "./welcome";
-// import SwipeableViews from "react-swipeable-views";
+import GameType from "./game-type";
 import {
   createGame,
   joinGame,
@@ -15,10 +15,13 @@ import qs from "qs";
 import { useLocation } from "react-router-dom";
 import { ShareLink } from "../../components/ShareLink";
 import { Background } from "../../components/Background";
+import NumberOfPlayers from "./number-of-players";
 
 enum Steps {
   GameName = 1,
-  PlayerName = 2,
+  GameType = 2,
+  PlayerName = 3,
+  NumberOfPlayers = 4,
 }
 
 const JoinGame: FC = () => {
@@ -32,6 +35,7 @@ const JoinGame: FC = () => {
   const [type, setType] = useState<ConnectType>();
   const [directLink, setDirectLink] = useState<boolean>();
   const [gameId, setGameId] = useState(name || "");
+  const [isPassAndPlay, setIsPassAndPlay] = useState(false);
   const [errorText, setErrorText] = useState<string>();
 
   useEffect(() => {
@@ -52,7 +56,7 @@ const JoinGame: FC = () => {
   const onConnect = (type: ConnectType) => {
     if (isCreate(type)) {
       setGameId(generateGameName());
-      setSlide(Steps.PlayerName);
+      setSlide(Steps.GameType);
     } else {
       setSlide(Steps.GameName);
     }
@@ -63,20 +67,29 @@ const JoinGame: FC = () => {
     const upperId = id?.toUpperCase();
     setErrorText(undefined);
     const exists = await gameExists(upperId);
-    if (exists) {
+    if (exists && !exists.isPassAndPlay) {
       setSlide(Steps.PlayerName);
       setGameId(upperId);
+    } else if (exists?.isPassAndPlay) {
+      setErrorText("Cannot join a Pass and Play Game");
     } else {
       setErrorText("Game does not exist");
     }
   };
 
-  const prompt = isCreate(type) ? "Create Game" : "Join Game";
+  const onSetPassAndPlay = async () => {
+    setIsPassAndPlay(true);
+    setSlide(Steps.NumberOfPlayers);
+  };
 
-  const onSubmit = async (name: string) => {
+  const onSubmit = async (
+    name: string,
+    isPassAndPlay = false,
+    numPlayers = 1,
+  ) => {
     try {
       const game = await (isCreate(type)
-        ? createGame(gameId, name, player)
+        ? createGame(gameId, name, player, isPassAndPlay, numPlayers)
         : joinGame(gameId, name, player));
 
       navigateTo(
@@ -90,6 +103,8 @@ const JoinGame: FC = () => {
       alert("Game is already full. Please Join or Create a different game.");
     }
   };
+
+  const prompt = isCreate(type) ? "Create Game" : "Join Game";
 
   return (
     <Background>
@@ -124,17 +139,30 @@ const JoinGame: FC = () => {
               onSubmit={onSetGameId}
             />
           )}
+          {slide === Steps.GameType && (
+            <GameType
+              onMultiDevice={() => setSlide(Steps.PlayerName)}
+              onPassAndPlay={onSetPassAndPlay}
+              onBack={() => setSlide(0)}
+            />
+          )}
           {slide === Steps.PlayerName && (
             <EnterName
               dataKey="playerName"
               title="Enter Your Name"
               label={prompt}
-              onBack={() => setSlide(0)}
+              onBack={() => setSlide(Steps.GameType)}
               onSubmit={onSubmit}>
               {isCreate(type) && (
                 <ShareLink gameId={gameId} style={{ padding: "1rem 0" }} />
               )}
             </EnterName>
+          )}
+          {slide === Steps.NumberOfPlayers && (
+            <NumberOfPlayers
+              onBack={() => setSlide(Steps.GameType)}
+              onSubmit={(players) => onSubmit("", isPassAndPlay, players)}
+            />
           )}
           {/* </SwipeableViews> */}
         </StyledCard>
