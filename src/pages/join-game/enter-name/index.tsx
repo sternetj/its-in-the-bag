@@ -10,9 +10,10 @@ interface WelcomeProps {
   error?: string;
   onSubmit: (name: string) => any;
   onBack: () => any;
+  children?: React.ReactNode;
 }
 
-const CreateGame: FC<WelcomeProps> = (props) => {
+const CreateGame = (props: WelcomeProps) => {
   const { onSubmit, label, title, dataKey, error, children } = props;
   const { placeholder = "Name", onBack } = props;
   const [name, setName] = useLocalStorage(dataKey, "");

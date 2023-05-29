@@ -1,5 +1,6 @@
-import React, { FC, useState } from "react";
+import React, { FC, useCallback, useState } from "react";
 import { Grid, Button, Typography, styled, TextField } from "@material-ui/core";
+import { isFinite, parseInt } from "lodash";
 
 interface NumberOfPlayersProps {
   onSubmit: (players: number) => void;
@@ -8,7 +9,18 @@ interface NumberOfPlayersProps {
 
 const NumberOfPlayers: FC<NumberOfPlayersProps> = (props) => {
   const { onSubmit, onBack } = props;
-  const [players, setPlayers] = useState<number>(2);
+  const [players, setPlayers] = useState("2");
+  const [errorText, setErrorText] = useState<string>("");
+
+  const handleSubmit = useCallback(() => {
+    const playerNum = parseInt(players);
+    if (isFinite(playerNum) && playerNum >= 2) {
+      onSubmit(playerNum);
+    } else {
+      setErrorText("You must have at lease 2 players");
+    }
+  }, [players, onSubmit]);
+
   return (
     <Container container direction="column" alignItems="center">
       <Typography variant="h4">How Many People are Playing?</Typography>
@@ -20,16 +32,20 @@ const NumberOfPlayers: FC<NumberOfPlayersProps> = (props) => {
         variant="outlined"
         type="number"
         placeholder="2"
+        error={!!errorText}
         helperText={
-          players ? `There will be ${players * 4} cards in the bag` : ""
+          errorText ||
+          (Number(players) > 1
+            ? `There will be ${Number(players) * 4} cards in the bag`
+            : "")
         }
         value={players}
-        onKeyPress={(e) => e.key === "Enter" && onSubmit(players ?? 2)}
-        onChange={(e) => setPlayers(Math.max(+e.target.value, 2))}
+        onKeyPress={(e) => e.key === "Enter" && handleSubmit}
+        onChange={(e) => setPlayers(e.target.value)}
       />
       <Grid container direction="row" justify="space-evenly">
         <ActionButton onClick={() => onBack()}>Back</ActionButton>
-        <ActionButton color="primary" onClick={() => onSubmit(players ?? 2)}>
+        <ActionButton color="primary" onClick={handleSubmit}>
           Continue
         </ActionButton>
       </Grid>

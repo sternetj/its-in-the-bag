@@ -68,6 +68,7 @@ ActionButton.defaultProps = {
   color: "secondary",
   style: {
     minWidth: "108px",
+    marginBottom: 8,
   },
 };
 

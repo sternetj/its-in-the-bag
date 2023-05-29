@@ -122,7 +122,6 @@ const JoinGame: FC = () => {
           </Typography>
         )}
         <StyledCard>
-          {/* <SwipeableViews index={slide}> */}
           {slide === 0 && (
             <Welcome
               onJoin={() => onConnect("join")}
@@ -164,7 +163,6 @@ const JoinGame: FC = () => {
               onSubmit={(players) => onSubmit("", isPassAndPlay, players)}
             />
           )}
-          {/* </SwipeableViews> */}
         </StyledCard>
       </Container>
     </Background>
