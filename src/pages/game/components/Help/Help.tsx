@@ -11,14 +11,13 @@ import ReactGA from "react-ga";
 const isMobile = checkIsMobile();
 
 interface Props {
-  gameId: string;
   canControl: boolean;
   onNewGame: Function;
   onExitGame: Function;
 }
 
 export const Help = (props: Props) => {
-  const { gameId, canControl, onNewGame, onExitGame } = props;
+  const { canControl, onNewGame, onExitGame } = props;
   const [open, setOpen] = useState<"howTo" | "leave-game" | "new-game">();
 
   const close = useMemo(

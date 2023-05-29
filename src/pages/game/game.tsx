@@ -155,7 +155,6 @@ const Game = () => {
   return (
     <Background>
       <Help
-        gameId={name}
         canControl={!spectator}
         onNewGame={() => !spectator && newGame()}
         onExitGame={() => {
