@@ -1,10 +1,8 @@
 import React, { useState, useMemo } from "react";
 import { IconButton, Grid } from "@material-ui/core";
 
-import HelpRounded from "@material-ui/icons/HelpRounded";
 import ExitToApp from "@material-ui/icons/ExitToAppOutlined";
 import Sync from "@material-ui/icons/Sync";
-import { HowToPlayModal } from "./HowToPlayModal";
 import { ExitGameModal } from "./ExitGameModal";
 import { NewGameModal } from "./NewGameModal";
 import { isMobile as checkIsMobile } from "is-mobile";
@@ -44,15 +42,6 @@ export const Help = (props: Props) => {
           display: "flex",
           flexDirection: isMobile ? "row" : "column",
         }}>
-        {/* <IconButton
-          title="Help"
-          color="inherit"
-          onClick={() => {
-            setOpen("howTo");
-            ReactGA.event({ category: "howTo", action: "open" });
-          }}>
-          <HelpRounded />
-        </IconButton> */}
         {canControl && (
           <IconButton
             title="New Game"
@@ -74,12 +63,6 @@ export const Help = (props: Props) => {
           <ExitToApp />
         </IconButton>
       </Grid>
-
-      <HowToPlayModal
-        gameId={gameId}
-        open={open === "howTo"}
-        onClose={() => close("close")}
-      />
 
       <NewGameModal
         open={open === "new-game" && canControl}
