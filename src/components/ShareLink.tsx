@@ -1,4 +1,4 @@
-import React, { FC, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import FilterNone from "@material-ui/icons/FilterNone";
 import {
   styled,
@@ -20,7 +20,7 @@ interface Props {
   style?: GridProps["style"];
 }
 
-export const ShareLink: FC<Props> = (props) => {
+export const ShareLink = (props: Props) => {
   const [open, setOpen] = useState(false);
   const copyInput = useRef<HTMLInputElement>();
   const { gameId, style } = props;

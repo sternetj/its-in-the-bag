@@ -1,4 +1,4 @@
-import React, { useState, FC, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Grid, styled, Card, Typography } from "@material-ui/core";
 import Welcome from "./welcome";
 import GameType from "./game-type";
@@ -24,7 +24,7 @@ enum Steps {
   NumberOfPlayers = 4,
 }
 
-const JoinGame: FC = () => {
+const JoinGame = () => {
   const { search } = useLocation();
   const { player, name } = qs.parse(search, { ignoreQueryPrefix: true }) as {
     player: string;

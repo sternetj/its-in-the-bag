@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import {
   Dialog,
   DialogContent,
@@ -15,7 +15,7 @@ interface Props {
   onClose: (didCompleteCard: boolean) => void;
 }
 
-export const TimesUpModal: FC<Props> = (props) => {
+export const TimesUpModal = (props: Props) => {
   const { open, cardText, onClose, cardWasShown } = props;
   return (
     <Dialog open={open}>

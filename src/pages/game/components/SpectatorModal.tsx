@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import {
   Dialog,
   DialogContent,
@@ -14,7 +14,7 @@ interface Props {
   onJoinOrLeave: Function;
 }
 
-export const SpectatorModal: FC<Props> = (props) => {
+export const SpectatorModal = (props: Props) => {
   const { open, canJoin, onJoinOrLeave, onSpectate } = props;
   return (
     <Dialog open={open}>

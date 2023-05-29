@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import {
   Dialog,
   DialogContent,
@@ -12,7 +12,7 @@ interface Props {
   onContinue: Function;
 }
 
-export const NoGame: FC<Props> = (props) => {
+export const NoGame = (props: Props) => {
   const { gameId, onContinue } = props;
   return (
     <Dialog open>

@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Grid, Button, Typography, styled, TextField } from "@material-ui/core";
 import { isFinite, parseInt } from "lodash";
 
@@ -7,7 +7,7 @@ interface NumberOfPlayersProps {
   onBack: () => void;
 }
 
-const NumberOfPlayers: FC<NumberOfPlayersProps> = (props) => {
+const NumberOfPlayers = (props: NumberOfPlayersProps) => {
   const { onSubmit, onBack } = props;
   const [players, setPlayers] = useState("2");
   const [errorText, setErrorText] = useState<string>("");

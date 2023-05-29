@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import {
   Dialog,
   DialogContent,
@@ -16,7 +16,7 @@ interface Props {
   title?: string;
 }
 
-export const ConfirmDialog: FC<Props> = (props) => {
+export const ConfirmDialog = (props: Props) => {
   const { prompt, open, onCancel, onConfirm, title } = props;
   return (
     <Dialog open={open}>

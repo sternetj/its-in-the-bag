@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { useState } from "react";
 import { Grid, Button, Typography, styled, TextField } from "@material-ui/core";
 import { useLocalStorage } from "./use-local-storage";
 

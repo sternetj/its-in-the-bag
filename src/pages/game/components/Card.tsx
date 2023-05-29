@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { ReactNode } from "react";
 import { Grid, makeStyles, Paper, Typography, Box } from "@material-ui/core";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import ReactCardFlip from "react-card-flip";
@@ -10,7 +10,7 @@ interface Props {
   onClick: () => void;
 }
 
-export const Card: FC<Props> = (props) => {
+export const Card = (props: Props) => {
   const { card, cardFront, isFlipped, onClick } = props;
   const classes = useStyles();
 

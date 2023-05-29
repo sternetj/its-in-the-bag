@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import { Grid, Button, Typography, Link, styled } from "@material-ui/core";
 
 interface WelcomeProps {
@@ -6,7 +6,7 @@ interface WelcomeProps {
   onCreate: Function;
 }
 
-const Welcome: FC<WelcomeProps> = ({ onJoin, onCreate }) => {
+const Welcome = ({ onJoin, onCreate }: WelcomeProps) => {
   return (
     <Container container direction="column" alignItems="center">
       <Typography variant="h4">It's In The Bag!</Typography>

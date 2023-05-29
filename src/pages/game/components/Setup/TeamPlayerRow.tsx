@@ -6,7 +6,7 @@ import {
   Grid,
   makeStyles,
 } from "@material-ui/core";
-import React, { FC } from "react";
+import React from "react";
 import { Player } from "../../hooks/use-game";
 import { amber } from "@material-ui/core/colors";
 import { SwapDirectionIcon } from "./SwapDirectionIcon";
@@ -16,7 +16,7 @@ type Props = {
   player: Player;
   onSwap: () => void;
 };
-export const TeamPlayerRow: FC<Props> = ({ player, onSwap, canEdit }) => {
+export const TeamPlayerRow = ({ player, onSwap, canEdit }: Props) => {
   const classes = useStyles();
 
   return (

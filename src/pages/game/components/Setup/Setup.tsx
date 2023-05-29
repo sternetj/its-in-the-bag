@@ -6,7 +6,7 @@ import {
   makeStyles,
   Button,
 } from "@material-ui/core";
-import React, { FC, useCallback } from "react";
+import React, { useCallback } from "react";
 import { Player } from "../../hooks/use-game";
 import { TeamPlayerRow } from "./TeamPlayerRow";
 import { groupBy } from "lodash";
@@ -21,7 +21,7 @@ type Props = {
   onStartGame: () => void;
 };
 
-export const Setup: FC<Props> = (props) => {
+export const Setup = (props: Props) => {
   const classes = useStyles();
   const { players, onChangeTeam, playerId, onStartGame } = props;
   const { A: teamA = [], B: teamB = [] } = groupBy(players, "team");

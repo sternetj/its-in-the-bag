@@ -1,4 +1,4 @@
-import React, { FC, Fragment } from "react";
+import React, { Fragment } from "react";
 import { Typography } from "@material-ui/core";
 import { GameState, Team } from "../hooks/use-game";
 
@@ -7,7 +7,7 @@ interface Props {
   team: Team;
   isYourTeam: boolean;
 }
-export const ScoreCard: FC<Props> = ({ team, scores, isYourTeam }) => {
+export const ScoreCard = ({ team, scores, isYourTeam }: Props) => {
   const moreThanOneRound = Object.keys(scores[team]).length > 1;
   const total = Object.values(scores[team] || {}).reduce(
     (t, roundScore) => t + roundScore,

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import {
   Grid,
   Button,
@@ -15,11 +15,7 @@ interface GameTypeProps {
   onBack: Function;
 }
 
-const GameType: FC<GameTypeProps> = ({
-  onPassAndPlay,
-  onMultiDevice,
-  onBack,
-}) => {
+const GameType = ({ onPassAndPlay, onMultiDevice, onBack }: GameTypeProps) => {
   return (
     <Container container direction="column" alignItems="center">
       <Typography variant="h4">How do you want to play?</Typography>

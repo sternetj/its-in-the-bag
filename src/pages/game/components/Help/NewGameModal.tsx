@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import {
   Dialog,
   DialogContent,
@@ -14,7 +14,7 @@ interface Props extends DialogProps {
   onNewGame: Function;
 }
 
-export const NewGameModal: FC<Props> = (props) => {
+export const NewGameModal = (props: Props) => {
   const { onCancel, onNewGame, ...dialogProps } = props;
 
   return (

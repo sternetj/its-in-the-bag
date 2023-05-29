@@ -1,4 +1,4 @@
-import React, { FC, useState, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import { IconButton, Grid } from "@material-ui/core";
 
 import HelpRounded from "@material-ui/icons/HelpRounded";
@@ -19,7 +19,7 @@ interface Props {
   onExitGame: Function;
 }
 
-export const Help: FC<Props> = (props) => {
+export const Help = (props: Props) => {
   const { gameId, canControl, onNewGame, onExitGame } = props;
   const [open, setOpen] = useState<"howTo" | "leave-game" | "new-game">();
 
