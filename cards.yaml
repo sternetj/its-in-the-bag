@@ -69,6 +69,8 @@ cards:
     type: *l
   - text: Bark
     type: *o
+  - text: Barn
+    type: *o
   - text: Baseball
     type: *s
   - text: Bass
@@ -91,6 +93,8 @@ cards:
     type: *p
   - text: Belly Dance
     type: *e
+  - text: Bench
+    type: *o
   - text: Beyoncé
     type: *p
   - text: Birth
@@ -393,6 +397,8 @@ cards:
     type: *l
   - text: Funny Bone
     type: *e
+  - text: Gate
+    type: *o
   - text: Gallop
     type: *s
   - text: Game of Thrones
@@ -439,6 +445,8 @@ cards:
     type: *l
   - text: Gremlins
     type: *e
+  - text: Grill
+    type: *o
   - text: Grizzly Bear
     type: *o
   - text: Groundhog Day
@@ -491,6 +499,8 @@ cards:
     type: *e
   - text: Hiking
     type: *s
+  - text: Hocus Pocus
+    type: *e
   - text: Home Alone
     type: *e
   - text: Honeysuckle
@@ -527,6 +537,12 @@ cards:
     type: *l
   - text: Indian
     type: *p
+  - text: Indiana
+    type: *p
+  - text: Indianapolis
+    type: *p
+  - text: Indianapolis 500
+    type: *e
   - text: Insect
     type: *o
   - text: Instagram
@@ -580,6 +596,8 @@ cards:
   - text: Lazy Boy
     type: *e
   - text: Leaf
+    type: *o
+  - text: Leash
     type: *o
   - text: Lemon
     type: *o
@@ -677,6 +695,8 @@ cards:
     type: *o
   - text: Muhammad Ali
     type: *s
+  - text: Mulch
+    type: *o
   - text: Muscle
     type: *s
   - text: Museum
@@ -701,6 +721,8 @@ cards:
     type: *e
   - text: Niagra Falls
     type: *l
+  - text: Nicolas Cage
+    type: *p
   - text: Nightmare
     type: *p
   - text: Nile River
@@ -761,6 +783,8 @@ cards:
     type: *e
   - text: Picnic
     type: *l
+  - text: Pickles
+    type: *o
   - text: Pier
     type: *l
   - text: Pilates
@@ -983,6 +1007,8 @@ cards:
     type: *l
   - text: Steve Jobs
     type: *p
+  - text: Stick
+    type: *o
   - text: Stone-Henge
     type: *l
   - text: Stoplight
@@ -1008,6 +1034,8 @@ cards:
   - text: Surfing
     type: *s
   - text: Surprise
+    type: *e
+  - text: Survivor
     type: *e
   - text: Sweat
     type: *s
@@ -1085,12 +1113,16 @@ cards:
     type: *s
   - text: Tiger
     type: *o
+  - text: TikTok
+    type: *e
   - text: Titanic
     type: *e
   - text: Tokyo
     type: *l
   - text: Tomatoes
     type: *o
+  - text: Tongue
+    type: *p
   - text: Tour
     type: *l
   - text: Tower of Pisa
@@ -1197,6 +1229,8 @@ cards:
     type: *e
   - text: XBOX
     type: *e
+  - text: Yard Barn
+    type: *o
   - text: Yellow Card
     type: *s
   - text: Yo-Yo
