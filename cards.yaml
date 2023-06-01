@@ -1,0 +1,1207 @@
+types:
+  - name: &e entertainment
+  - name: &l locations
+  - name: &o outdoors
+  - name: &p people
+  - name: &s sports
+cards:
+  - text: 12 Angry Men
+    type: *e
+  - text: 3D
+    type: *e
+  - text: A Tale of Two Cities
+    type: *e
+  - text: Abraham Lincoln
+    type: *p
+  - text: Academy Awards
+    type: *e
+  - text: Air
+    type: *o
+  - text: Airport
+    type: *l
+  - text: Aladdin
+    type: *e
+  - text: Albert Einstein
+    type: *p
+  - text: Alexander Hamilton
+    type: *p
+  - text: Alien
+    type: *e
+  - text: Allergies
+    type: *o
+  - text: Alleyway
+    type: *l
+  - text: Amazon
+    type: *l
+  - text: Annie
+    type: *e
+  - text: Antlers
+    type: *o
+  - text: Apartment
+    type: *l
+  - text: Apple
+    type: *o
+  - text: Assassin's Creed
+    type: *e
+  - text: Athens
+    type: *l
+  - text: Audience
+    type: *p
+  - text: Author
+    type: *p
+  - text: Backflip
+    type: *s
+  - text: Badminton
+    type: *s
+  - text: Balance Beam
+    type: *s
+  - text: Ballet
+    type: *s
+  - text: Balloon
+    type: *s
+  - text: Banana
+    type: *o
+  - text: Barack Obama
+    type: *p
+  - text: Barbeque
+    type: *s
+  - text: Barbershop
+    type: *l
+  - text: Baseball
+    type: *s
+  - text: Bass
+    type: *e
+  - text: Bat
+    type: *s
+  - text: Bath
+    type: *l
+  - text: Beach
+    type: *l
+  - text: Bear Trap
+    type: *s
+  - text: Beatles
+    type: *e
+  - text: Beauty and the Beast
+    type: *e
+  - text: Bedroom
+    type: *l
+  - text: Beethoven
+    type: *p
+  - text: Belly Dance
+    type: *e
+  - text: Beyoncé
+    type: *p
+  - text: Birth
+    type: *p
+  - text: Birthday
+    type: *e
+  - text: Bison
+    type: *o
+  - text: Black Beauty
+    type: *e
+  - text: Black Swan
+    type: *e
+  - text: Blood
+    type: *p
+  - text: Blowhole
+    type: *o
+  - text: Blue Bird
+    type: *o
+  - text: Boar
+    type: *o
+  - text: Boat
+    type: *s
+  - text: Boots
+    type: *p
+  - text: Bow Tie
+    type: *e
+  - text: Boxing
+    type: *s
+  - text: Braces
+    type: *p
+  - text: Brazil
+    type: *l
+  - text: Brick Oven
+    type: *l
+  - text: Bridge
+    type: *l
+  - text: Britney Spears
+    type: *p
+  - text: Broadway
+    type: *e
+  - text: Brush
+    type: *s
+  - text: Bull Riding
+    type: *s
+  - text: Bulldog
+    type: *o
+  - text: Bulls Eye
+    type: *s
+  - text: Bumble Bee
+    type: *o
+  - text: Bus Driver
+    type: *p
+  - text: Butterfly
+    type: *o
+  - text: Buzzer
+    type: *s
+  - text: Caesar Augustus
+    type: *p
+  - text: California
+    type: *l
+  - text: Call of Duty
+    type: *e
+  - text: Camera
+    type: *s
+  - text: Camping
+    type: *s
+  - text: Canyon
+    type: *l
+  - text: Capital
+    type: *l
+  - text: Casino
+    type: *l
+  - text: Castle
+    type: *l
+  - text: Cat Woman
+    type: *p
+  - text: Cello
+    type: *e
+  - text: Chainsaw
+    type: *o
+  - text: Chalk
+    type: *o
+  - text: Championship
+    type: *s
+  - text: Charles Darwin
+    type: *p
+  - text: Charlotte's Web
+    type: *e
+  - text: Chatroom
+    type: *l
+  - text: Cherry Tree
+    type: *o
+  - text: Chicken
+    type: *o
+  - text: Chickenpox
+    type: *p
+  - text: Chimney
+    type: *l
+  - text: Christmas
+    type: *e
+  - text: Christopher Columbus
+    type: *p
+  - text: Church
+    type: *l
+  - text: Cigar
+    type: *p
+  - text: City
+    type: *l
+  - text: Classroom
+    type: *l
+  - text: Claws
+    type: *o
+  - text: Cleats
+    type: *s
+  - text: Cliff
+    type: *l
+  - text: Clouds
+    type: *l
+  - text: Clown
+    type: *p
+  - text: Club
+    type: *p
+  - text: Coconut
+    type: *o
+  - text: Coldplay
+    type: *e
+  - text: Colosseum
+    type: *l
+  - text: Comedian
+    type: *e
+  - text: Community
+    type: *p
+  - text: Compass
+    type: *l
+  - text: Computer
+    type: *e
+  - text: Constellation
+    type: *o
+  - text: Convertible
+    type: *s
+  - text: Country
+    type: *l
+  - text: Couple
+    type: *p
+  - text: Courthouse
+    type: *l
+  - text: Cousin
+    type: *p
+  - text: Cowboy
+    type: *p
+  - text: Cradle
+    type: *p
+  - text: Credit Card
+    type: *p
+  - text: Creepy
+    type: *p
+  - text: Cross Country
+    type: *s
+  - text: Cross Fit
+    type: *s
+  - text: Crosswalk
+    type: *l
+  - text: Curling
+    type: *s
+  - text: Customer
+    type: *p
+  - text: Cycling
+    type: *s
+  - text: Daisy
+    type: *o
+  - text: Dealer
+    type: *p
+  - text: Death
+    type: *p
+  - text: Deer
+    type: *o
+  - text: Diamond
+    type: *o
+  - text: Diaper
+    type: *p
+  - text: Dig
+    type: *o
+  - text: Dinner Table
+    type: *l
+  - text: Dinner
+    type: *p
+  - text: Dinosaur
+    type: *o
+  - text: Disco
+    type: *e
+  - text: Disneyland
+    type: *l
+  - text: Dizzy
+    type: *p
+  - text: Doctor
+    type: *p
+  - text: Dog Trainer
+    type: *p
+  - text: Dominos
+    type: *s
+  - text: Donald Trump
+    type: *p
+  - text: Donkey
+    type: *o
+  - text: Dormitory
+    type: *l
+  - text: Dragonfly
+    type: *o
+  - text: Driver's License
+    type: *p
+  - text: Driver
+    type: *s
+  - text: Drool
+    type: *p
+  - text: Drums
+    type: *e
+  - text: Duck Hunt
+    type: *e
+  - text: Dumbbells
+    type: *s
+  - text: Dungeons and Dragons
+    type: *e
+  - text: Duplex
+    type: *l
+  - text: DVD Player
+    type: *e
+  - text: Editor
+    type: *p
+  - text: Eiffel Tower
+    type: *l
+  - text: Elevator
+    type: *l
+  - text: Elvis Presley
+    type: *p
+  - text: Email
+    type: *e
+  - text: Empire State Building
+    type: *l
+  - text: End Zone
+    type: *l
+  - text: Equipment
+    type: *s
+  - text: Escalator
+    type: *l
+  - text: ESPN
+    type: *s
+  - text: Event Planner
+    type: *p
+  - text: Excitement
+    type: *e
+  - text: Exercise
+    type: *s
+  - text: Exit
+    type: *o
+  - text: Expression
+    type: *p
+  - text: Farm
+    type: *l
+  - text: Fat
+    type: *p
+  - text: Father
+    type: *p
+  - text: Fence
+    type: *l
+  - text: Ferret
+    type: *o
+  - text: Figure Skating
+    type: *s
+  - text: Firefighter
+    type: *p
+  - text: Fireflies
+    type: *o
+  - text: Flashlight
+    type: *o
+  - text: Flea
+    type: *o
+  - text: Flippers
+    type: *s
+  - text: Flush
+    type: *l
+  - text: Fly Fishing
+    type: *s
+  - text: Football
+    type: *s
+  - text: Forest Fire
+    type: *o
+  - text: Forest
+    type: *l
+  - text: Frankenstein
+    type: *p
+  - text: Free Throw
+    type: *s
+  - text: Friends
+    type: *e
+  - text: Frown
+    type: *p
+  - text: Fruit
+    type: *o
+  - text: Funeral
+    type: *l
+  - text: Funny Bone
+    type: *e
+  - text: Gallop
+    type: *s
+  - text: Game of Thrones
+    type: *e
+  - text: Game
+    type: *s
+  - text: Garage
+    type: *l
+  - text: Garbage
+    type: *p
+  - text: Garden
+    type: *l
+  - text: George Washington
+    type: *p
+  - text: Ghost
+    type: *e
+  - text: Giraffe
+    type: *o
+  - text: Girlfriend
+    type: *p
+  - text: Gladiator
+    type: *e
+  - text: Gloves
+    type: *o
+  - text: Goalie
+    type: *s
+  - text: Goggles
+    type: *s
+  - text: Gold Digger
+    type: *p
+  - text: Gold Medal
+    type: *s
+  - text: Golf Tee
+    type: *s
+  - text: Gone with the Wind
+    type: *e
+  - text: Goose
+    type: *o
+  - text: Grand Canyon
+    type: *l
+  - text: Grazing
+    type: *o
+  - text: Great Wall of China
+    type: *l
+  - text: Gremlins
+    type: *e
+  - text: Grizzly Bear
+    type: *o
+  - text: Groundhog Day
+    type: *e
+  - text: Guitar
+    type: *s
+  - text: Gym Rat
+    type: *s
+  - text: Gym
+    type: *l
+  - text: Haircut
+    type: *p
+  - text: Hairspray
+    type: *e
+  - text: Halo
+    type: *p
+  - text: Handshake
+    type: *p
+  - text: Harry Potter
+    type: *p
+  - text: Haunted House
+    type: *l
+  - text: Hawaii
+    type: *l
+  - text: Hay
+    type: *o
+  - text: Head Over Heals
+    type: *p
+  - text: Head To Head
+    type: *s
+  - text: Headphones
+    type: *s
+  - text: Health
+    type: *s
+  - text: Heartbeat
+    type: *p
+  - text: Hedgehog
+    type: *o
+  - text: Helicopter
+    type: *s
+  - text: Hello Kitty
+    type: *e
+  - text: Helmet
+    type: *s
+  - text: Henry Ford
+    type: *p
+  - text: Hiccup
+    type: *p
+  - text: High Heels
+    type: *e
+  - text: Hiking
+    type: *s
+  - text: Home Alone
+    type: *e
+  - text: Honeysuckle
+    type: *o
+  - text: Hong Kong
+    type: *l
+  - text: Hoof
+    type: *o
+  - text: Horns
+    type: *o
+  - text: Horse Race
+    type: *s
+  - text: Hospital
+    type: *l
+  - text: Hotel
+    type: *l
+  - text: Hungry
+    type: *p
+  - text: Hunt
+    type: *s
+  - text: Hurdles
+    type: *s
+  - text: Hurricane
+    type: *o
+  - text: Hurt
+    type: *s
+  - text: I Spy
+    type: *o
+  - text: Ice Skating
+    type: *s
+  - text: Iguana
+    type: *o
+  - text: Indian Sea
+    type: *l
+  - text: Indian
+    type: *p
+  - text: Insect
+    type: *o
+  - text: Instagram
+    type: *e
+  - text: Iron Man
+    type: *e
+  - text: Island
+    type: *l
+  - text: Jail
+    type: *l
+  - text: Javelin
+    type: *s
+  - text: Jaws
+    type: *e
+  - text: Jump Rope
+    type: *s
+  - text: Jungle
+    type: *l
+  - text: Junk Food
+    type: *e
+  - text: Jupiter
+    type: *l
+  - text: Justin Bieber
+    type: *p
+  - text: Kangaroo
+    type: *o
+  - text: Karate
+    type: *s
+  - text: Kiss
+    type: *p
+  - text: Kitchen
+    type: *l
+  - text: Kite
+    type: *s
+  - text: Kung Fu
+    type: *s
+  - text: Kung-Fu Panda
+    type: *e
+  - text: Ladder
+    type: *o
+  - text: Lagoon
+    type: *l
+  - text: Lake
+    type: *l
+  - text: Las Vegas
+    type: *l
+  - text: Lava
+    type: *o
+  - text: Lawn Mower
+    type: *o
+  - text: Lazy Boy
+    type: *e
+  - text: Leaf
+    type: *o
+  - text: Lemon
+    type: *o
+  - text: Leonardo Da Vinci
+    type: *p
+  - text: Leopard
+    type: *o
+  - text: Les Miserables
+    type: *e
+  - text: Library
+    type: *l
+  - text: Limbo
+    type: *e
+  - text: Little Women
+    type: *e
+  - text: Log
+    type: *o
+  - text: Lord of the Rings
+    type: *e
+  - text: Lost
+    type: *e
+  - text: Love
+    type: *p
+  - text: Macarena
+    type: *e
+  - text: Magazine
+    type: *e
+  - text: Magician
+    type: *e
+  - text: Makeup
+    type: *p
+  - text: Mall
+    type: *l
+  - text: Manager
+    type: *p
+  - text: Manure
+    type: *o
+  - text: Marathon
+    type: *s
+  - text: Mario Kart
+    type: *e
+  - text: Mars
+    type: *l
+  - text: Massage
+    type: *s
+  - text: McDonalds
+    type: *l
+  - text: Meat
+    type: *o
+  - text: Mecca
+    type: *l
+  - text: Menu
+    type: *p
+  - text: Michael Jackson
+    type: *p
+  - text: Michael Jordan
+    type: *s
+  - text: Mickey Mouse
+    type: *p
+  - text: Migration
+    type: *o
+  - text: Mirror
+    type: *p
+  - text: Model
+    type: *e
+  - text: Mohawk
+    type: *p
+  - text: Money
+    type: *p
+  - text: Monopoly
+    type: *e
+  - text: Monsoon
+    type: *o
+  - text: Monster
+    type: *o
+  - text: Mood
+    type: *p
+  - text: Moon Walk
+    type: *e
+  - text: Mosque
+    type: *l
+  - text: Mosquito Bite
+    type: *o
+  - text: Motorcycle
+    type: *s
+  - text: Mount Everest
+    type: *l
+  - text: Mountain Goat
+    type: *o
+  - text: Mouse
+    type: *o
+  - text: Mouth Guard
+    type: *s
+  - text: Mud
+    type: *o
+  - text: Muhammad Ali
+    type: *s
+  - text: Muscle
+    type: *s
+  - text: Museum
+    type: *l
+  - text: My Fair Lady
+    type: *e
+  - text: Naked
+    type: *o
+  - text: NASCAR
+    type: *s
+  - text: Nature
+    type: *o
+  - text: NBC
+    type: *e
+  - text: Neighbor
+    type: *p
+  - text: Net
+    type: *s
+  - text: Netflix
+    type: *e
+  - text: Newspaper
+    type: *e
+  - text: Niagra Falls
+    type: *l
+  - text: Nightmare
+    type: *p
+  - text: Nile River
+    type: *l
+  - text: Nosey
+    type: *p
+  - text: Novel
+    type: *e
+  - text: Oats
+    type: *o
+  - text: Office
+    type: *l
+  - text: Oklahoma!
+    type: *e
+  - text: Olympics
+    type: *s
+  - text: Onion
+    type: *o
+  - text: Opossum
+    type: *o
+  - text: Orange
+    type: *o
+  - text: Out of Bounds
+    type: *s
+  - text: Out-House
+    type: *l
+  - text: Oven
+    type: *l
+  - text: Owl
+    type: *o
+  - text: Pablo Picasso
+    type: *p
+  - text: Paint Bucket
+    type: *l
+  - text: Panther
+    type: *o
+  - text: Park
+    type: *l
+  - text: Parrot
+    type: *o
+  - text: Pasture
+    type: *l
+  - text: Payment
+    type: *p
+  - text: Peanuts
+    type: *o
+  - text: Pear
+    type: *o
+  - text: Penalty Kick
+    type: *s
+  - text: Pentagon
+    type: *l
+  - text: Pew
+    type: *l
+  - text: Photograph
+    type: *s
+  - text: Piano
+    type: *e
+  - text: Picnic
+    type: *l
+  - text: Pier
+    type: *l
+  - text: Pilates
+    type: *s
+  - text: Pinecones
+    type: *o
+  - text: Pirate
+    type: *p
+  - text: Pitchfork
+    type: *o
+  - text: Pizza Party
+    type: *e
+  - text: Plant
+    type: *o
+  - text: Poker
+    type: *s
+  - text: Police Officer
+    type: *p
+  - text: Politician
+    type: *p
+  - text: Pollution
+    type: *p
+  - text: Popcorn
+    type: *e
+  - text: Population
+    type: *p
+  - text: Porch
+    type: *l
+  - text: Potato
+    type: *o
+  - text: Pregnant
+    type: *p
+  - text: President
+    type: *p
+  - text: Private School
+    type: *l
+  - text: Proposal
+    type: *p
+  - text: Protein Shake
+    type: *s
+  - text: Psycho
+    type: *e
+  - text: Puck
+    type: *s
+  - text: Pull-Up Bar
+    type: *s
+  - text: Pumpkin
+    type: *o
+  - text: Punch
+    type: *s
+  - text: Puppy
+    type: *o
+  - text: Push Up
+    type: *s
+  - text: Putter
+    type: *s
+  - text: Pyramids
+    type: *l
+  - text: Quarterback
+    type: *s
+  - text: Queen
+    type: *p
+  - text: Radio
+    type: *e
+  - text: Rainbow
+    type: *o
+  - text: Reading
+    type: *e
+  - text: Record
+    type: *s
+  - text: Red Carpet
+    type: *e
+  - text: Refrigerator
+    type: *l
+  - text: Relationship
+    type: *p
+  - text: Rent
+    type: *p
+  - text: Restaurant
+    type: *l
+  - text: River Dance
+    type: *e
+  - text: River
+    type: *l
+  - text: Road
+    type: *l
+  - text: Rock Climb
+    type: *s
+  - text: Rock Star
+    type: *e
+  - text: Rocky Mountains
+    type: *l
+  - text: Rodeo
+    type: *s
+  - text: Rolex Watch
+    type: *p
+  - text: Roller Coaster
+    type: *l
+  - text: Roller Coaster
+    type: *s
+  - text: Rollerblade
+    type: *s
+  - text: Rolling Stones
+    type: *e
+  - text: Roof
+    type: *l
+  - text: Rooster
+    type: *o
+  - text: Roots
+    type: *o
+  - text: Round
+    type: *s
+  - text: Running
+    type: *s
+  - text: Runway
+    type: *e
+  - text: Safari
+    type: *o
+  - text: Sail Boat
+    type: *s
+  - text: Salmon
+    type: *o
+  - text: Salsa Dance
+    type: *e
+  - text: Salt
+    type: *o
+  - text: Sand
+    type: *o
+  - text: Scavenger Hunt
+    type: *o
+  - text: Sculpture
+    type: *e
+  - text: Season
+    type: *o
+  - text: Secretary
+    type: *p
+  - text: Seeds
+    type: *o
+  - text: Selfie
+    type: *e
+  - text: Shakira
+    type: *p
+  - text: Shed
+    type: *l
+  - text: Shotgun
+    type: *s
+  - text: Shotput
+    type: *s
+  - text: Shovel
+    type: *o
+  - text: Shower
+    type: *l
+  - text: Shrek
+    type: *e
+  - text: Sign Language
+    type: *p
+  - text: Singer
+    type: *p
+  - text: Skiing
+    type: *s
+  - text: Sky
+    type: *o
+  - text: Skydiving
+    type: *s
+  - text: Skyscraper
+    type: *l
+  - text: Slice
+    type: *s
+  - text: Slip 'N Slide
+    type: *e
+  - text: Slippery
+    type: *s
+  - text: Snapchat
+    type: *e
+  - text: Snorkel
+    type: *s
+  - text: Snowflake
+    type: *o
+  - text: Snowman
+    type: *o
+  - text: Soccer
+    type: *s
+  - text: Social Media
+    type: *e
+  - text: Soil
+    type: *o
+  - text: Soprano
+    type: *e
+  - text: Sour
+    type: *o
+  - text: Space
+    type: *o
+  - text: Spaghetti
+    type: *p
+  - text: Sphinx
+    type: *l
+  - text: Spider
+    type: *o
+  - text: Spiderman
+    type: *p
+  - text: Spinach
+    type: *o
+  - text: Sport
+    type: *s
+  - text: Squash
+    type: *o
+  - text: Stadium
+    type: *s
+  - text: Stairs
+    type: *l
+  - text: Standing Ovation
+    type: *p
+  - text: Star Trek
+    type: *e
+  - text: Star Wars
+    type: *e
+  - text: Statue of Liberty
+    type: *l
+  - text: Statue
+    type: *l
+  - text: Steve Jobs
+    type: *p
+  - text: Stone-Henge
+    type: *l
+  - text: Stoplight
+    type: *l
+  - text: Strike
+    type: *s
+  - text: Stubbed Toe
+    type: *s
+  - text: Student
+    type: *p
+  - text: Summer
+    type: *o
+  - text: Sun Screen
+    type: *o
+  - text: Sunburn
+    type: *o
+  - text: Sunrise
+    type: *o
+  - text: Super Market
+    type: *l
+  - text: Superman
+    type: *p
+  - text: Surfing
+    type: *s
+  - text: Surprise
+    type: *e
+  - text: Sweat
+    type: *s
+  - text: Swimming Pool
+    type: *l
+  - text: Swing
+    type: *l
+  - text: Sword
+    type: *s
+  - text: Tablet
+    type: *e
+  - text: Taj Mahal
+    type: *l
+  - text: Tap Dance
+    type: *e
+  - text: Taxes
+    type: *p
+  - text: Teacher
+    type: *p
+  - text: Technical Foul
+    type: *s
+  - text: Television
+    type: *e
+  - text: Temperature
+    type: *s
+  - text: Temple
+    type: *l
+  - text: Tennis
+    type: *s
+  - text: Tent
+    type: *s
+  - text: Test
+    type: *p
+  - text: Text Message
+    type: *e
+  - text: The Book of Mormon
+    type: *e
+  - text: The Cat in the Hat
+    type: *e
+  - text: The Da Vinci Code
+    type: *e
+  - text: The Devil Wears Prada
+    type: *e
+  - text: The Godfather
+    type: *e
+  - text: The Grapes of Wrath
+    type: *e
+  - text: The Hobbit
+    type: *e
+  - text: The Hunger Games
+    type: *e
+  - text: The Lion King
+    type: *e
+  - text: The Little Mermaid
+    type: *e
+  - text: The Matrix
+    type: *e
+  - text: The Phantom of the Opera
+    type: *e
+  - text: The Simpsons
+    type: *e
+  - text: Theater
+    type: *e
+  - text: Thinking
+    type: *p
+  - text: Thomas Edison
+    type: *p
+  - text: Thunder
+    type: *o
+  - text: Ticket
+    type: *e
+  - text: Tickle
+    type: *p
+  - text: Tiger Woods
+    type: *s
+  - text: Tiger
+    type: *o
+  - text: Titanic
+    type: *e
+  - text: Tokyo
+    type: *l
+  - text: Tomatoes
+    type: *o
+  - text: Tour
+    type: *l
+  - text: Tower of Pisa
+    type: *l
+  - text: Toy Story
+    type: *e
+  - text: Track
+    type: *s
+  - text: Traffic
+    type: *p
+  - text: Trampoline
+    type: *s
+  - text: Treadmill
+    type: *s
+  - text: Treasure Map
+    type: *l
+  - text: Turf
+    type: *s
+  - text: Turtle
+    type: *o
+  - text: Tuxedo
+    type: *e
+  - text: Tweezers
+    type: *p
+  - text: Twilight
+    type: *e
+  - text: Two By Four
+    type: *l
+  - text: U2
+    type: *e
+  - text: University
+    type: *l
+  - text: Uno
+    type: *e
+  - text: Urinal
+    type: *l
+  - text: Valley
+    type: *l
+  - text: Vatican
+    type: *l
+  - text: Vegetable
+    type: *o
+  - text: Video Game
+    type: *s
+  - text: Virtual Reality
+    type: *e
+  - text: Voice
+    type: *p
+  - text: Volcano
+    type: *l
+  - text: Vomit
+    type: *p
+  - text: Wallet
+    type: *p
+  - text: Walrus
+    type: *o
+  - text: Walt Disney
+    type: *p
+  - text: Waltz
+    type: *s
+  - text: War
+    type: *p
+  - text: Water Bottle
+    type: *p
+  - text: Water Polo
+    type: *s
+  - text: Water
+    type: *o
+  - text: Waterfall
+    type: *l
+  - text: Wave
+    type: *o
+  - text: Weather
+    type: *o
+  - text: Wedding
+    type: *p
+  - text: Weeds
+    type: *o
+  - text: Wheat
+    type: *o
+  - text: Wheelbarrow
+    type: *o
+  - text: White House
+    type: *l
+  - text: Wi-Fi
+    type: *e
+  - text: Wind
+    type: *o
+  - text: Windy City
+    type: *l
+  - text: Wing
+    type: *o
+  - text: Wink and Smile
+    type: *p
+  - text: Winner
+    type: *s
+  - text: Winnie the Pooh
+    type: *e
+  - text: Wizard of Oz
+    type: *e
+  - text: Worm
+    type: *o
+  - text: X-Men
+    type: *e
+  - text: XBOX
+    type: *e
+  - text: Yellow Card
+    type: *s
+  - text: Yo-Yo
+    type: *s
+  - text: Yoga
+    type: *s
+  - text: Zombie
+    type: *p
+  - text: Zoo
+    type: *l
