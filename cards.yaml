@@ -67,6 +67,8 @@ cards:
     type: *s
   - text: Barbershop
     type: *l
+  - text: Bark
+    type: *o
   - text: Baseball
     type: *s
   - text: Bass
