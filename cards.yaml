@@ -1241,3 +1241,383 @@ cards:
     type: *p
   - text: Zoo
     type: *l
+  - text: a cappella
+    type: *e
+  - text: acne
+    type: *p
+  - text: afraid
+    type: *p
+  - text: airplane
+    type: *o
+  - text: alarm clock
+    type: *p
+  - text: alligator
+    type: *o
+  - text: angel
+    type: *p
+  - text: ankle
+    type: *p
+  - text: ant
+    type: *o
+  - text: ape
+    type: *o 
+  - text: applause
+    type: *p
+  - text: arm
+    type: *p
+  - text: armadillo
+    type: *o 
+  - text: asleep
+    type: *p
+  - text: astronaut
+    type: *p
+  - text: athlete
+    type: *s
+  - text: aunt
+    type: *p
+  - text: autumn
+    type: *o
+  - text: baby
+    type: *p
+  - text: back
+    type: *l
+  - text: backpack
+    type: *p
+  - text: bag
+    type: *p
+  - text: baking
+    type: *e
+  - text: bald eagle
+    type: *o 
+  - text: band
+    type: *e
+  - text: barbie
+    type: *e
+  - text: barefoot
+    type: *p
+  - text: basketball
+    type: *s
+  - text: batman
+    type: *e
+  - text: batteries
+    type: *p
+  - text: beach ball
+    type: *o
+  - text: beanstalk
+    type: *o
+  - text: bear
+    type: *o
+  - text: beaver
+    type: *o
+  - text: bed
+    type: *p
+  - text: bedtime
+    type: *p
+  - text: bee
+    type: *o
+  - text: beg
+    type: *o
+  - text: bells
+    type: *e
+  - text: belt
+    type: *p
+  - text: bicycle
+    type: *o
+  - text: big
+    type: *o
+  - text: billboard
+    type: *o
+  - text: binoculars
+    type: *o
+  - text: bird
+    type: *o
+  - text: bird nest
+    type: *o
+  - text: birthday
+    type: *p
+  - text: bite
+    type: *o
+  - text: blanket
+    type: *o
+  - text: blink
+    type: *p
+  - text: blue jeans
+    type: *p
+  - text: bobsled
+    type: *s
+  - text: body
+    type: *p
+  - text: bonfire
+    type: *o
+  - text: bonnet
+    type: *p
+  - text: book
+    type: *e
+  - text: box
+    type: *e
+  - text: boy
+    type: *p
+  - text: broken
+    type: *o
+  - text: broom
+    type: *p
+  - text: bubble
+    type: *o
+  - text: buffalo
+    type: *o
+  - text: bug
+    type: *o
+  - text: bunk bed
+    type: *p
+  - text: bunny
+    type: *o
+  - text: bus
+    type: *o
+  - text: cafeteria
+    type: *l
+  - text: cage
+    type: *l
+  - text: cake
+    type: *p
+  - text: calculator
+    type: *p
+  - text: camel
+    type: *o
+  - text: candle
+    type: *p
+  - text: candy
+    type: *p
+  - text: candy cane
+    type: *p
+  - text: candy corn
+    type: *p
+  - text: canoeing
+    type: *o
+  - text: cape
+    type: *p
+  - text: car
+    type: *o
+  - text: car wash
+    type: *o
+  - text: card
+    type: *p
+  - text: cast
+    type: *e
+  - text: cat
+    type: *o
+  - text: caterpillar
+    type: *o
+  - text: catfish
+    type: *o
+  - text: chair
+    type: *p
+  - text: chalk
+    type: *e
+  - text: chameleon
+    type: *o
+  - text: cheek
+    type: *p
+  - text: cheerleader
+    type: *e
+  - text: chess
+    type: *e
+  - text: chew
+    type: *p
+  - text: chicken noodle soup
+    type: *p
+  - text: chime
+    type: *e
+  - text: chimpanzee
+    type: *o
+  - text: china
+    type: *l
+  - text: chop
+    type: *p
+  - text: circle
+    type: *p
+  - text: clap
+    type: *e
+  - text: claw
+    type: *o
+  - text: cloud
+    type: *o
+  - text: clay
+    type: *o
+  - text: clock
+    type: *s
+  - text: coach
+    type: *s
+  - text: coffin
+    type: *l
+  - text: cold
+    type: *o
+  - text: college
+    type: *l
+  - text: conversation
+    type: *e
+  - text: cook
+    type: *e
+  - text: corn
+    type: *o
+  - text: cough
+    type: *p
+  - text: cow
+    type: *o
+  - text: crab
+    type: *o
+  - text: cricket
+    type: *o
+  - text: cuff
+    type: *p
+  - text: cupid
+    type: *p
+  - text: dance
+    type: *e
+  - text: darts
+    type: *s
+  - text: dentist
+    type: *p
+  - text: dimple
+    type: *p
+  - text: dog
+    type: *o
+  - text: dracula
+    type: *e
+  - text: dragon
+    type: *e
+  - text: drink
+    type: *p
+  - text: duck
+    type: *o
+  - text: eagle
+    type: *o
+  - text: ear
+    type: *p
+  - text: elbow
+    type: *p
+  - text: elephant
+    type: *o
+  - text: eye
+    type: *p
+  - text: eyebrow
+    type: *p
+  - text: fang
+    type: *o
+  - text: fanny pack
+    type: *o
+  - text: festival
+    type: *e
+  - text: finger
+    type: *p
+  - text: fireworks
+    type: *o
+  - text: fishing
+    type: *o
+  - text: fix
+    type: *p
+  - text: flag
+    type: *o
+  - text: flamingo
+    type: *o
+  - text: flower
+    type: *o
+  - text: flu
+    type: *p
+  - text: flute
+    type: *e
+  - text: fly
+    type: *o
+  - text: forehead
+    type: *p
+  - text: freckle
+    type: *p
+  - text: frog
+    type: *o
+  - text: ghost
+    type: *e
+  - text: glasses
+    type: *p
+  - text: goodbye
+    type: *p
+  - text: grape
+    type: *o
+  - text: grass
+    type: *o
+  - text: gum
+    type: *p
+  - text: hair
+    type: *p
+  - text: hair dryer
+    type: *p
+  - text: handwriting
+    type: *p
+  - text: heart
+    type: *p
+  - text: honk
+    type: *o
+  - text: hopscotch
+    type: *e
+  - text: horse
+    type: *o
+  - text: hug
+    type: *p
+  - text: hula hoop
+    type: *s
+  - text: ice cream
+    type: *p
+  - text: jog
+    type: *s
+  - text: journal
+    type: *p
+  - text: jump
+    type: *s
+  - text: jumping jack
+    type: *s
+  - text: key
+    type: *p
+  - text: kick
+    type: *s
+  - text: knee
+    type: *p
+  - text: knot
+    type: *p
+  - text: laugh
+    type: *e
+  - text: lawn mower
+    type: *o
+  - text: leg
+    type: *p
+  - text: letter opener
+    type: *p
+  - text: light bulb
+    type: *p
+  - text: lion
+    type: *o
+  - text: lipstick
+    type: *p
+  - text: monkey
+    type: *o
+  - text: mop
+    type: *p
+  - text: mosquito
+    type: *o
+  - text: mouth
+    type: *p
+  - text: nose
+    type: *p
+  - text: paint
+    type: *p
+  - text: pig
+    type: *o
+  - text: pinch
+    type: *p
+  - text: ping pong
+    type: *s
+  - text: pocket
+    type: *p
+  - text: pogo stick
+    type: *s
+  - text: rocket
+    type: *o
+  - text: roundabout
+    type: *o
